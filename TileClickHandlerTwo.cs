@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//handels clicking on tiles
 public class TilePrefabClickHandler : MonoBehaviour, IPointerDownHandler
 {
     public TileManager tileManager;
