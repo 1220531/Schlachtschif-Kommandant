@@ -23,7 +23,7 @@ namespace GameManager
 
         private TileManager tileManager;
         private List<Ship> shipsList;
-
+        //building grid part
         private void Start()
         {
             player1TileManager = player1Grid.GetComponent<TileManager>();
@@ -32,11 +32,11 @@ namespace GameManager
             player1ShipsRemaining = player1TileManager.GetShips().Count;
             player2ShipsRemaining = player2TileManager.GetShips().Count;
 
-            currentPlayer = Random.Range(1, 3);
+            currentPlayer = Random.Range(1, 2);
 
             gameState = GameState.Building;
         }
-
+        //handels start of the game and first player turn
         public void StartGame()
         {
             startButton.SetActive(false);
@@ -56,7 +56,7 @@ namespace GameManager
 
             gameState = GameState.Playing;
         }
-
+        //handels if its a players turn they can click on a grid
         public void EndTurn()
         {
             if (currentPlayer == 1)
@@ -72,7 +72,7 @@ namespace GameManager
                 currentPlayer = 1;
             }
         }
-
+        //handels number of placed ships and win condition
         public void ShipPlaced()
         {
             if (currentPlayer == 1)
