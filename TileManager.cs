@@ -33,7 +33,7 @@ public class TileManager : MonoBehaviour
 
     private Tile[,] tiles;
 
-
+    // list of ships based on set number in unity 
     public List<Ship> GetShips()
     {
         List<Ship> shipsList = new List<Ship>();
@@ -48,7 +48,7 @@ public class TileManager : MonoBehaviour
     }
 
 
-
+    // Generates grids 
     private void Awake()
     {
         tiles = new Tile[gridSize, gridSize];
@@ -69,7 +69,7 @@ public class TileManager : MonoBehaviour
             }
         }
     }
-
+    //handels ship length rotation and placement
     public bool PlaceShip(GameObject shipPrefab, Tile startTile, Tile endTile)
     {
         int length = Mathf.Max(Mathf.Abs(startTile.x - endTile.x), Mathf.Abs(startTile.y - endTile.y)) + 1;
@@ -151,7 +151,7 @@ public class TileManager : MonoBehaviour
         return false;
     }
 }
-
+//refrence to  click handler
 public class TileClickHandler : MonoBehaviour
 {
     public TileManager tileManager;
